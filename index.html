@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./imgs/logo.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+    <title>文本分析与数据挖掘-2022春</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./files/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/bootstrap-theme.min.css">
+
+    <!-- Google fonts -->
+    <link href="./files/css" rel="stylesheet" type="text/css">
+
+    <!-- Google Analytics -->
+    <script async="" src="./files/analytics.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-46895817-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="./files/style.css">
+</head>
+
+<body>
+
+
+
+<div id="header">
+    <h1>《文本分析与数据挖掘》课程网站</h1>
+    <div style="clear:both;"></div>
+</div>
+
+
+
+<div class="sechighlight">
+    <div class="container sec">
+
+        <h2>课程简介</h2>
+        <br>
+        <p style="text-indent:2em;text-align:justify">
+        在大数据时代，现实世界中 80%以上的信息是以自然语言文本形式（如书籍、新闻报道、研究论文、社交媒体和网页等）记载的非结构化数据。尽管数据挖掘和机器学习已经成为数据分析的主要手段，但是大部分数据挖掘方法只能处理结构化的或半结构化的数据。与结构化的数据挖掘任务相比较，非结构化的文本挖掘具有更大的挑战性，而且这项技术能够在将海量数据转化为结构化知识的过程中发挥巨大的作用。
+        </p>
+        
+        <p style="text-indent:2em;text-align:justify">
+        文本数据挖掘是通过机器学习、自然语言处理和推理分析等方法，根据文本内容完成信息抽取、关系发现、热点预测、文本分类和自动摘要等具体任务的信息处理技术。随着互联网和移动通信技术的快速发展和普及应用，这项技术已在众多领域得到了广泛应用。</p>
+
+
+       <p style="text-indent:2em;text-align:justify">
+       本课程以自然语言处理工具包NLTK为主要实践平台，理论与实践相结合地讲授：语言处理与Python，获得文本语料和词汇资源，处理原始文本，编写结构化程序，分类和标注单词，学习本文分类，从文本提取信息，文本聚类和主题发现，情感分析，分析句子结构，构建基于特征的文法，分析句子的含义，语言学数据管理。
+       </p>
+       
+       <p style="text-indent:2em;text-align:justify">
+       <a href="https://www.kaggle.com/" target="_blank">Kaggle</a>提供的免费在线Jupyter环境极大地便利了本课程的实验教学，在此向该网站表示诚挚的感谢！</p>
+
+
+    </div>
+</div>
+
+<div class="container sec">
+    <section id="information">
+        <h2>课程信息</h2>
+        <br>
+        <dl class="dl-horizontal">
+            <dt>授课教师</dt>
+            <dd>
+                <p>
+                    <strong>张建章</strong> 博士 <br>
+                    邮箱：jianzhang.zhang@foxmail.com <br>
+                    钉钉：张建章 <br>
+                    办公室：仓前恕园2号楼1009</p>
+            </dd>
+            
+            <dt>互动平台</dt>
+            <dd>
+                <p>
+                
+                课程钉钉群（周五4-5节）<a href="https://h5.dingtalk.com/circle/healthCheckin.html?corpId=dingc195a55e671c0c24c6101f183d847ec3&4fd1bf35-02c=65c47529-1b8&cbdbhh=qwertyuiop&origin=1#/" target="_blank"><img src="./imgs/dingding.png" height="20" width="20" /></a>；课程讨论区 <a href="https://github.com/zhangjianzhang/text_mining/issues" target="_blank"><img src="./imgs/github.png" height="20" width="20" /></a></p>
+
+
+            </dd>
+
+            <dt>授课对象</dt>
+            <dd>
+                <p>本科生，大数据管理与应用201</p>
+
+
+            </dd>
+
+
+            <dt>授课时间</dt>
+            <dd>
+                <p>
+                    周五4-5节（1-16周），10:40--12:10（无课间休息时间）[<a href="./files/materials/calendar.pdf", target="_blank">校历</a>]
+                                     
+                    
+                </p>
+            </dd>
+
+            <dt>授课地点</dt>
+            <dd>
+                <p>
+                    恕园2-1001
+                </p>
+
+
+            </dd>
+            <dt>课程资料</dt>
+            <dd>
+                <p>
+                    【教材】《文本数据挖掘》，宗成庆等 著，2019年，清华大学出版社
+                </p>
+                <p>
+                    【图书】《Speech and Language Processing (3rd ed. draft)》, Dan Jurafsky and James H. Martin [<a href="https://web.stanford.edu/~jurafsky/slp3/", target="_blank">电子版</a>]
+                </p>
+                
+                <p>
+                    【图书】《Introduction to Information Retrieval》, Christopher D. Manning et al. [<a href="https://nlp.stanford.edu/IR-book/information-retrieval-book.html", target="_blank">电子版</a>]
+                </p>
+                
+                <p>
+                    【图书】《Natural Language Processing with Python》, Steven Bird et al. [<a href="https://www.nltk.org/book/", target="_blank">电子版</a>]
+                </p>
+                
+            </dd>
+            
+            <dt>常用工具</dt>
+            <dd>
+                <ul>
+                
+                <li>Kaggle [<a href="https://www.kaggle.com/", target="_blank">官网</a>][<a href="./files/materials/kaggle_basic.pdf", target="_blank">使用说明</a>]</li>
+                <li>NLTK [<a href="https://www.nltk.org/", target="_blank">官网</a>]</li>
+                <li>Anaconda [<a href="https://www.anaconda.com/products/individual", target="_blank">官网</a>][<a href="./files/materials/anaconda_install.pdf", target="_blank">安装说明</a>]
+                    </li>
+                    <li>PyCharm [<a href="https://www.jetbrains.com/pycharm/download/#section=windows", target="_blank">官网</a>]（请下载Community版本）</li>
+                    <li>NLTK Corpora List [<a href="https://www.nltk.org/nltk_data/", target="_blank">官网</a>]</li>
+                    <li>NLTK Corpora Directory [<a href="https://pan.baidu.com/s/17YfUVx94MJ_6Z6XkEmagjg?pwd=axkp", target="_blank">网盘</a>]</li>
+                    
+                    <li>Notepad++ [<a href="https://notepad-plus-plus.org/downloads/", target="_blank">官网</a>] </li>
+                    <li>Chrome [<a href="https://www.google.cn/intl/zh-CN/chrome/", target="_blank">官网</a>] </li>
+                    <li>开发者搜索引擎 [<a href="https://kaifa.baidu.com/", target="_blank">官网</a>] </li>                    
+                    
+                </ul>
+            </dd>
+
+            <dt>成绩评定</dt>
+            <dd>
+                <p>本课程成绩主要由四部分组成，如下：</p>
+                <ul class="unstyled">
+                    
+                        <li>期末成绩-50%</li>
+                        <li>课程作业/测验-30%</li>
+                        <li>课堂表现-10%</li>
+                        <li>日常考勤-10%</li>
+                    
+                </ul>
+            </dd>
+
+        </dl>
+    </section>
+</div>
+
+<div class="container sec">
+    <h2>课程计划</h2>
+    <br>
+    <table class="table">
+        <tbody>
+        <tr class="info">
+            <th>章节</th>
+            <th>日期</th>
+            <th>内容</th>
+            <th>思考题</th>
+            <th>资料</th>
+        </tr>
+        <tr>
+            <td>
+            Chapter 1
+            </td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+             <li>Language Processing and Python <small>[ <a href="./files/slides/lecture_1.pdf" target="_blank"><img src="./imgs/pdf.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_1/lecture_1.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-1
+" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.processon.com/view/link/6253ab490791290727bed385" target="_blank"><img src="./imgs/mind.jpg" height="20" width="20" /></a> ]</small></li>
+           
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                -
+                
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+       
+            <td><strong>作业1</strong></td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+                第一次作业题 <small>[<a href="./files/homework/homework_1.pdf" target="_blank">题目</a>]</small>
+               
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                <p style="color:#FF0000" ;="">不需要提交</p>
+
+            </td>
+            
+        </tr>
+        
+        
+       
+        
+
+                                                          <!-- ----------分割线---------- -->
+                                                      
+      <tr>
+            <td>
+            Chapter 2
+            </td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+             <li>Accessing Text Corpora and Lexical Resources <small>[ <a href="./files/slides/lecture_2.pdf" target="_blank"><img src="./imgs/pdf.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_2/lecture_2.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-2" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.processon.com/view/link/6253acb70e3e74116838184c" target="_blank"><img src="./imgs/mind.jpg" height="20" width="20" /></a> ]</small></li>
+           
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                -
+                
+                
+            </td>
+        </tr>
+        
+        
+         <tr>
+       
+            <td><strong>作业2</strong></td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+                第二次作业题 <small>[<a href="./files/homework/homework_2.zip" target="_blank">题目</a>]</small>
+               
+            </td>
+
+            <td>
+            
+            <a href="https://workspace.jianguoyun.com/inbox/collect/c9b15ad5dcc84760bc5787330a16398c/submit" target="_blank">提交地址</a>
+                
+            </td>
+            
+            <td> 
+            
+                <p style="color:#FF0000" ;=""><strong>DDL: 2022-03-30 23:59</strong></p>
+
+            </td>
+            
+        </tr>
+        
+        
+        <!-- ----------分割线---------- -->
+        
+        <tr>
+            <td>
+            Chapter 3
+            </td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+             <li>Processing Raw Text <small>[ <a href="./files/slides/chapter_3.pdf" target="_blank"><img src="./imgs/pdf.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_3/lecture_3.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-3" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.processon.com/view/link/624ebe290791290727b643f3" target="_blank"><img src="./imgs/mind.jpg" height="20" width="20" /></a> ]</small></li>
+           
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                -
+                
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+            Chapter 4
+            </td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+             <li>Writing Structured Programs <small>[ <a href="./files/slides/chapter_4.pdf" target="_blank"><img src="./imgs/pdf.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_4/lecture_4.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-4" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.processon.com/view/link/624ec1c11efad4078915f784" target="_blank"><img src="./imgs/mind.jpg" height="20" width="20" /></a> ]</small></li>
+           
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                -
+                
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <td>
+            Chapter 5
+            </td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+             <li>Categorizing and Tagging Words <small>[ <a href="./files/slides/chapter_5.pdf" target="_blank"><img src="./imgs/pdf.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_5/lecture_5.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-5" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.processon.com/view/link/624eacc71efad4078915a0c9" target="_blank"><img src="./imgs/mind.jpg" height="20" width="20" /></a> ]</small></li>
+           
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                文件读写模块<a href="./files/codes/lecture_5/utils.zip" target="_blank">fileUtils</a>
+                
+                
+            </td>
+        </tr>
+        
+         <tr>
+       
+            <td><strong>作业3</strong></td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+                第三次作业题 <small>[<a href="./files/homework/homework_3.ipynb" target="_blank">题目</a>，<a href="./files/homework/homework_3_nswer.ipynb" target="_blank">参考答案</a>]</small>
+               
+            </td>
+
+            <td>
+            
+            <a href="https://workspace.jianguoyun.com/inbox/collect/854b576c1a174ebeb8bb39d53d850f89/submit" target="_blank">提交地址</a>
+
+            </td>
+            
+            <td> 
+            
+                <p style="color:#FF0000" ;=""><strong>DDL: 2022-05-12 00:00</strong></p>
+
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td>
+            Chapter 6
+            </td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+             <li>Learning to Classify Text <small>[ <a href="./files/slides/chapter_6.pdf" target="_blank"><img src="./imgs/pdf.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_6/lecture_6.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-6" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.processon.com/view/link/6273870763768906ff9ce334" target="_blank"><img src="./imgs/mind.jpg" height="20" width="20" /></a> ]</small></li>
+             
+             <li>Text Classification Experiments <small>[<a href="./files/codes/lecture_7/lecture_7_1.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_7/lecture_7_2.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-7-1" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-7-2" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a> ]</small></li>
+           
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                -
+                
+                
+            </td>
+        </tr>
+        
+       <tr>
+       
+            <td><strong>作业4</strong></td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+                第四次作业题 <small>[<a href="./files/homework/homework_4.ipynb" target="_blank">题目</a>，<a href="https://raw.githubusercontent.com/zhangjianzhang/text_mining/master/files/homework/text.csv" target="_blank">数据</a>，<a href="./files/homework/homework_4_answer.ipynb" target="_blank">参考答案</a>]</small>
+               
+            </td>
+
+            <td>
+            
+            <a href="https://workspace.jianguoyun.com/inbox/collect/4c1203ad751b4de288e3423fb2da1a11/submit" target="_blank">提交地址</a>
+
+            </td>
+            
+            <td> 
+            
+                <p style="color:#FF0000" ;=""><strong>DDL: 2022-05-31 00:00</strong></p>
+
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td>
+            Chapter 7
+            </td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+             
+             <li>Hierarchical Agglomerative Clustering <small>[<a href="./files/slides/chapter_7.pdf" target="_blank"><img src="./imgs/pdf.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_8/lecture_8_1.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="./files/codes/lecture_8/lecture_8_2.ipynb" target="_blank"><img src="./imgs/jupyter.png" height="20" width="20" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-8-1" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a>，<a href="https://www.kaggle.com/jianzhangzhang/lecture-8-2" target="_blank"><img src="./imgs/kaggle.png" height="20" width="50" /></a> ]</small></li>
+           
+            </td>
+
+            <td>
+                -
+            </td>
+
+            <td> 
+                
+                -
+                
+                
+            </td>
+        </tr>
+                
+        <tr>
+       
+            <td><strong>期末实验</strong></td>
+
+            <td>
+            -
+            </td>
+
+            <td>
+
+                题目要求详见<a href="./files/final/final_homework.ipynb" target="_blank">final_homework.ipynb</a>文件，分组情况见钉钉群
+               
+            </td>
+
+            <td>
+            
+            <a href="https://workspace.jianguoyun.com/inbox/collect/d89b3d87fdb4466ea75ffffb7e43e589/submit" target="_blank">提交地址</a>
+
+            </td>
+            
+            <td> 
+            
+                <p style="color:#FF0000" ;=""><strong>DDL: 2022-6-17 23:59</strong></p>
+
+            </td>
+            
+        </tr>
+        
+        <tr>
+       
+            <td><strong>期末论文</strong></td>
+
+            <td>
+            <a href="./files/final/assignment.pdf" target="_blank">要求</a> <br>
+            <a href="./files/final/template.doc" target="_blank">模板</a> <br>
+            </td>
+
+            <td>
+
+                辅助工具：<br>
+                
+                <li><a href="./files/final/ccf2019.pdf" target="_blank">CCF期刊会议列表</a> <br></li>
+                <li><a href="./files/final/CSSCI_journal_list.pdf" target="_blank">CSSCI期刊列表</a> <br></li>
+                <li><a href="https://apps.webofknowledge.com/" target="_blank">Web of Science</a>（校园网）<br></li>
+                <li><a href="https://www.cnki.net/" target="_blank">知网</a>（校园网） <br></li>
+                <li><a href="https://sci-hub.hkvisa.net/" target="_blank">SCI-HUB</a> <br></li>
+                
+               
+            </td>
+
+            <td>
+              <a href="https://workspace.jianguoyun.com/inbox/collect/7cfd5c76781a413b898e7edb99231a2a/submit" target="_blank">提交链接</a> 
+            </td>
+             
+            <td> 
+                
+                <p style="color:#FF0000";><strong>DDL: 2022-6-17 23:59</strong></p>
+
+            </td>
+            
+        </tr>                                                 
+                                                             
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+
+
+        </tbody>
+    </table>
+</div>
+
+<!-- jQuery and Boostrap -->
+<script src="./files/jquery.min.js"></script>
+<script src="./files/bootstrap.min.js"></script>
+
+
+</body>
+</html>
